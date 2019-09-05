@@ -1,0 +1,108 @@
+/* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#grid{
+    display: grid;
+    height: 100vh;
+    grid-auto-rows: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#title{
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
+    border-image-slice: 1;
+}
+
+.pane{
+    scroll-snap-align: start;
+}
+
+#first{
+    scroll-snap-align: start;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.fade-border{
+    border-top: 3px solid;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgb(255, 255, 255) 50%, rgba(0,0,0,0) 100%);
+    border-image-slice: 1;
+}
+
+.fp-tableCell{
+    box-shadow: inset 0px 0px 0px 2000px rgba(0,0,0,0.5);
+}
+
+#pane-image{
+
+    width: 100%; 
+    min-height: 100vh;
+    /* cool effect without width 100% */
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+    top: 0;   
+}
+
+
+.pane{
+    display: grid;
+    place-items: center;
+    z-index: 0;
+    /* height: 100vh; */
+    color: white;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span{
+    background-color: white;
+}
+
+.pane-header{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 120px;
+}
+.pane-header-small{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 70px;
+}
+
+#pane-items{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 15px;
+    place-items: center;
+}
+.pane-img{
+    filter: invert(1);
+    -webkit-filter: invert(1);
+    width: auto;
+    height: auto;
+    max-height: 150px;
+    max-width: 150px;
+    margin-right: 30px;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .pane-header{
+        font-size: 30px;
+    }
+    .pane-header-small{
+        font-size: 20px;
+    }
+    .pane-img{
+        max-height: 100px;
+        max-width: 100px;
+    }
+} 
